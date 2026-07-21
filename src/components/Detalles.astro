@@ -1,0 +1,53 @@
+---
+const detalles = [
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>`,
+    titulo: "Cuándo",
+    valor: "Fines de semana (sábado y domingo)",
+    detalle: "Horarios a confirmar según disponibilidad"
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`,
+    titulo: "Dónde",
+    valor: "Valparaíso, Chile",
+    detalle: "Ubicación exacta por confirmar"
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`,
+    titulo: "Cupos",
+    valor: "10 personas por semana",
+    detalle: "Grupos reducidos para atención personalizada"
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`,
+    titulo: "Modalidad",
+    valor: "Presencial e intensivo",
+    detalle: "2 días de práctica intensiva"
+  }
+];
+---
+
+<section class="py-20 px-4 bg-dark-card/50">
+  <div class="max-w-6xl mx-auto">
+    <!-- Encabezado -->
+    <div class="text-center mb-16">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">Información del curso</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">Detalles del curso</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Todo lo que necesitas saber para inscribirte.</p>
+    </div>
+
+    <!-- Grid de detalles -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {detalles.map((detalle) => (
+        <div class="card-tech rounded-2xl p-6 text-center">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+            <Fragment set:html={detalle.icon} />
+          </div>
+          <h3 class="text-gray-400 text-sm font-medium uppercase tracking-wider mb-2">{detalle.titulo}</h3>
+          <p class="text-white font-bold text-lg mb-1">{detalle.valor}</p>
+          <p class="text-gray-500 text-sm">{detalle.detalle}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

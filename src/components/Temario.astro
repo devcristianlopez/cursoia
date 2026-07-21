@@ -1,0 +1,74 @@
+---
+const dias = [
+  {
+    dia: "Sábado",
+    titulo: "Fundamentos y Configuración",
+    temas: [
+      "Introducción a la IA en el desarrollo de software",
+      "Configuración del entorno: OpenCode, terminales y extensions",
+      "Primeros pasos con agentes de IA",
+      "Entendiendo los flujos de trabajo agentic",
+      "Hands-on: Tu primer agente programando"
+    ]
+  },
+  {
+    dia: "Domingo",
+    titulo: "Construcción y Casos Reales",
+    temas: [
+      "Flujos avanzados de planificación y ejecución",
+      "Construcción de software completo con agentes",
+      "Casos prácticos con Lemoria",
+      "Testing y documentación asistida por IA",
+      "Proyecto final: Desarrolla tu propia aplicación"
+    ]
+  }
+];
+---
+
+<section id="temario" class="py-20 px-4">
+  <div class="max-w-4xl mx-auto">
+    <!-- Encabezado -->
+    <div class="text-center mb-16">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">Programa detallado</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">Temario del curso</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">2 días intensivos para que domines el desarrollo de software con agentes de IA.</p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="space-y-8">
+      {dias.map((dia, i) => (
+        <div class="relative">
+          <!-- Línea conectora -->
+          {i < dias.length - 1 && (
+            <div class="absolute left-6 top-16 w-0.5 h-full bg-gradient-to-b from-primary/50 to-transparent hidden sm:block"></div>
+          )}
+
+          <div class="card-tech rounded-2xl p-6 sm:p-8">
+            <!-- Header del día -->
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary font-bold text-lg shrink-0">
+                {i + 1}
+              </div>
+              <div>
+                <span class="text-primary text-sm font-semibold uppercase tracking-wider">{dia.dia}</span>
+                <h3 class="text-xl font-bold text-white">{dia.titulo}</h3>
+              </div>
+            </div>
+
+            <!-- Lista de temas -->
+            <ul class="space-y-3 ml-0 sm:ml-16">
+              {dia.temas.map((tema) => (
+                <li class="flex items-start gap-3 text-gray-300">
+                  <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>{tema}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
